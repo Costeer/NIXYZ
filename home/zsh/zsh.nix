@@ -26,8 +26,8 @@
       ip = "ip --color=auto";
       cd = "z";
       nixb = "sudo nixos-rebuild switch --flake /etc/nixos#default";
-      nixu = "sudo nix flake update /etc/nixos/";
-      nixep = "sudoedit /etc/nixos/programs.nix";
+      nixu = "sudo nix flake update";
+      nixep = "sudoedit /etc/nixos/modules/programs.nix";
       nixef = "sudoedit /etc/nixos/flake.nix";
       nixe = "sudoedit /etc/nixos/configuration.nix";
       se = "sudoedit";

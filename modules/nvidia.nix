@@ -13,7 +13,7 @@ in {
       "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
     ];
   environment.variables = {
-    # GBM_BACKEND = "nvidia-drm"; # If crash in firefox, remove this line
+    GBM_BACKEND = "nvidia-drm"; # If crash in firefox, remove this line
     LIBVA_DRIVER_NAME = "nvidia"; # hardware acceleration
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     NVD_BACKEND = "direct";

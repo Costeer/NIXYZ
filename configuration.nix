@@ -5,54 +5,57 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports =
-    [ 
+  imports = [ 
+
     ./hardware-configuration.nix
 
     ###---Config-Splitting---###
-    ./programs.nix
-    
+
     ./modules/nix.nix 
-    ./modules/nvidia.nix
-    ./modules/appimage.nix
+ 
     ./modules/fonts.nix
+
+    ./modules/nvidia.nix
+
+    ./modules/appimage.nix
+
+    ./modules/programs.nix
+
+    ./modules/flatpacks.nix
 
     ###---Programs---###
     inputs.home-manager.nixosModules.default
+
     inputs.spicetify-nix.nixosModules.default
-    
-  
+
   ];   
 
   programs.nix-ld.enable = true;
 
 
-  systemd.services.flatpak-repo = {
-    wantedBy = [ "multi-user.target" ];
-    path = [ pkgs.flatpak ];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    '';
-  };
-  services = {
-    flatpak.enable = true;
-  };
+#  systemd.services.flatpak-repo = {
+#    wantedBy = [ "multi-user.target" ];
+#    path = [ pkgs.flatpak ];
+#    script = ''
+#      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+#    '';
+#  };
+#  services = {
+#    flatpak.enable = true;
+#  };
+#
+#  services.flatpak.update.onActivation = true;
+#
+#  services.flatpak.packages = [
+#   { appId = "---"; origin = "flathub"; }
+#
+#    { appId = "dev.vencord.Vesktop"; origin = "flathub";  }
+#
+#    { appId = "im.fluffychat.Fluffychat"; origin = "flathub";  }
 
-  services.flatpak.update.onActivation = true;
+#    { appId = "io.github.zen_browser.zen"; origin = "flathub";  }
 
-  services.flatpak.packages = [
-#    { appId = "com.brave.Browser"; origin = "flathub";  }
-#    "com.obsproject.Studio"
-#    "im.riot.Riot"
-
-    { appId = "dev.vencord.Vesktop"; origin = "flathub";  }
-    "com.obsproject.Studio"
-    "im.riot.Riot"
-
-
-    { appId = "io.github.zen_browser.zen"; origin = "flathub";  }
-
-  ];
+#  ];
 
 #  download-buffer-size = "128";
 
@@ -159,8 +162,8 @@
 
   #------------------------------------------------------------------#
   
-  catppuccin.flavor = "mocha";
-  catppuccin.enable = true;
+  #catppuccin.flavor = "mocha";
+  #catppuccin.enable = true;
 
 
   system.stateVersion = "24.05"; # Did you read the comment?

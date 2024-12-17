@@ -21,13 +21,14 @@
 
     #r2modman
     appimage-run
-    inputs.umu.packages.${pkgs.system}.umu
+    #inputs.umu.packages.${pkgs.system}.umu
 
     #---Terminal-Stuff---#
     gptfdisk
-    vim 
+    neovim 
     cpio
     meson
+    #python2
     cmake
     eza
     zoxide
@@ -42,7 +43,6 @@
     zenith-nvidia
     nodejs_22
     #-Fetch-Scripts
-
     microfetch
     nitch
     maxfetch
@@ -56,7 +56,11 @@
     nwg-look
     adw-gtk3
     gnome-extension-manager
+    gnome-themes-extra
     gnome-tweaks
+    colloid-icon-theme
+    sassc
+    gtk-engine-murrine
     gdm-settings
     dunst
     rofi-wayland
@@ -69,6 +73,7 @@
     #---Applications---#
     flatpak
     gearlever
+    unityhub
     gamescope
     hyprshot
     gamescope
@@ -79,8 +84,10 @@
     alacritty
     obsidian
     krita
+    aseprite
     ungoogled-chromium
     vlc
+    #blender
     fragments
     spotify
   ];

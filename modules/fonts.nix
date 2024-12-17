@@ -13,11 +13,9 @@
     proggyfonts
     cantarell-fonts
     jetbrains-mono
-    ###---NerdFonts---###
-    (nerdfonts.override { fonts = [ 
-    "FiraCode" 
-    "DroidSansMono"
-    "JetBrainsMono" 
-    ]; })
+    ###---NerdFonts---### 
+    nerd-fonts.fira-code 
+    nerd-fonts.droid-sans-mono
+    nerd-fonts.jetbrains-mono
   ];
 }

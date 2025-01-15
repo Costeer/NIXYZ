@@ -22,6 +22,9 @@
   ####----Splitting-Confs----####
   imports = [
     ./home/zsh/zsh.nix
+    ./home/zed/zed.nix
+    ./home/hypr/hyprland.nix
+    ./home/hypr/hyprpaper.nix
     #./apps/fastfetch.nix
     ./home/kitty/kitty.nix
     #./apps/rofi.nix
@@ -40,9 +43,9 @@
     };
   };
 
-  programs.btop = {
+  catppuccin.btop = {
     #enable = true;
-    catppuccin.enable = true;
+    enable = true;
   };
 
   

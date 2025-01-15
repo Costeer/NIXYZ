@@ -25,11 +25,11 @@
       la = "eza -la";
       ip = "ip --color=auto";
       cd = "z";
-      nixb = "sudo nixos-rebuild switch --flake /etc/nixos#default";
-      nixu = "sudo nix flake update";
-      nixep = "sudoedit /etc/nixos/modules/programs.nix";
-      nixef = "sudoedit /etc/nixos/flake.nix";
-      nixe = "sudoedit /etc/nixos/configuration.nix";
+      nixb = "sudo nixos-rebuild switch --flake /home/costeer/nixosconfig#default";
+      nixu = "nix flake update";
+      nixep = "nano /users/costeer/nixosconfig/modules/programs.nix";
+      nixef = "nano ~/nixosconfig/flake.nix";      
+      nixe = "nano ~/nixosconfig/configuration.nix";
       se = "sudoedit";
       ###---Programs---###
       #ficsit-cli = "./home/costeer/AppImages/app/ficsit-cli";
@@ -49,7 +49,7 @@
       microfetch
       #eval $(thefuck --alias)
       #
-      #'';
+      '';
 
     plugins = with pkgs; [
       {
@@ -85,8 +85,8 @@
      ];
   };
 
-  programs.fzf = {
-    enable = true;
-    enableZshIntegration = true;
-  };
+  #programs.fzf = {
+  #  enable = true;
+  #  enableZshIntegration = true;
+  #};
 }

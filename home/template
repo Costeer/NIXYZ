@@ -1,0 +1,9 @@
+{ config, lib, pkgs, ... }:
+
+{
+  # Create the config file if it doesn't exist
+  home.file.".config/".text = ''
+
+
+ '';
+}

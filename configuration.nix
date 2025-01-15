@@ -21,7 +21,9 @@
 
     ./modules/programs.nix
 
-    ./modules/flatpacks.nix
+    ./modules/flatpaks.nix
+
+
 
     ###---Programs---###
     inputs.home-manager.nixosModules.default
@@ -31,33 +33,6 @@
   ];   
 
   programs.nix-ld.enable = true;
-
-
-#  systemd.services.flatpak-repo = {
-#    wantedBy = [ "multi-user.target" ];
-#    path = [ pkgs.flatpak ];
-#    script = ''
-#      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-#    '';
-#  };
-#  services = {
-#    flatpak.enable = true;
-#  };
-#
-#  services.flatpak.update.onActivation = true;
-#
-#  services.flatpak.packages = [
-#   { appId = "---"; origin = "flathub"; }
-#
-#    { appId = "dev.vencord.Vesktop"; origin = "flathub";  }
-#
-#    { appId = "im.fluffychat.Fluffychat"; origin = "flathub";  }
-
-#    { appId = "io.github.zen_browser.zen"; origin = "flathub";  }
-
-#  ];
-
-#  download-buffer-size = "128";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -111,7 +86,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -162,8 +137,8 @@
 
   #------------------------------------------------------------------#
   
-  #catppuccin.flavor = "mocha";
-  #catppuccin.enable = true;
+  catppuccin.flavor = "mocha";
+  catppuccin.enable = true;
 
 
   system.stateVersion = "24.05"; # Did you read the comment?

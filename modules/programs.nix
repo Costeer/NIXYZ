@@ -4,26 +4,11 @@
   environment.systemPackages = with pkgs; [
   #----------------------Programs------------------------------------#
     
-    
-    #gnome-bluetooth
-    #libgtop
-    #bluez
-    #bluez-tools
-    #grimblast
-    #gpu-screen-recorder
-    #hyprpicker
-    #networkmanager
-    #matugen
-    #wl-clipboard
-    #swww
-    #dart-sass
-    #brightnessctl
-
-    #r2modman
+   
     appimage-run
-    #inputs.umu.packages.${pkgs.system}.umu
-
+    zed-editor
     #---Terminal-Stuff---#
+    tmux
     gptfdisk
     neovim 
     cpio
@@ -42,20 +27,19 @@
     playerctl
     zenith-nvidia
     nodejs_22
-    #-Fetch-Scripts
+    #---Fetch-Scripts---#
     microfetch
     nitch
-    maxfetch
-    fastfetch
-    nerdfetch
-    afetch
+    #maxfetch
+    #fastfetch
+    #nerdfetch
     #---Customization---#
     bibata-cursors
     bibata-cursors-translucent
     hyprpaper
+    #python313Packages.qtile-extras
     nwg-look
     adw-gtk3
-    gnome-extension-manager
     gnome-themes-extra
     gnome-tweaks
     colloid-icon-theme
@@ -67,7 +51,7 @@
     wlogout
     papirus-icon-theme
     papirus-folders
-    spicetify-cli
+    #spicetify-cli
     egl-wayland
     
     #---Applications---#
@@ -81,7 +65,7 @@
     hyprpicker
     mangohud
     kitty
-    alacritty
+    #alacritty
     obsidian
     krita
     aseprite
@@ -124,6 +108,9 @@
     # make sure to also set the portal package, so that they are in sync
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
+
+  ###---Qtile---###
+  #services.xserver.windowManager.qtile.enable = true;
 
   programs.spicetify =
      let
